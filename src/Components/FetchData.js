@@ -1,11 +1,11 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const FetchData = (path) => {
-    const [List, setList] = useState(null);
+const FetchData = (url) => {
+    const [List, setList] = useState();
 
     useEffect(() => {
-        axios.get(path)
+        axios.get(url)
             .then(response => {
                 setList(response.List);
 
@@ -13,8 +13,8 @@ const FetchData = (path) => {
             .catch(error => {
                 console.error(error);
             });
-    }, [path])
-    return {List};
+    }, [url])
+    return { List };
 }
 
 export default FetchData;

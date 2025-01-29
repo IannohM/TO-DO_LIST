@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import AddList from "./Components/AddList";
 import Navbar from "./Components/Navbar";
 import './index.css'
+import Tasks from "./Components/Tasks";
 function App() {
   return (
     <Router>
@@ -12,6 +13,7 @@ function App() {
         <Switch>
           <Route path="/" exact component={Home} />
           <Route path="/AddList" component={AddList}/>
+          <Route path="/Tasks/:id" component={Tasks}/>
         </Switch>
       </div>
     </Router>
