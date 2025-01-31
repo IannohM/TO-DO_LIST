@@ -3,12 +3,13 @@ import { useState } from "react";
 import { Button, Form } from "react-bootstrap";
 import { toast, ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { useEffect } from "react";
 
 function AddContent() {
     const [date, setDate] = useState('');
     const [time, setTime] = useState('');
     const [task, setTask] = useState('');
-    // const [tasks, setTasks] = useState({});
+    const [tasks, setTasks] = useState([]);
 
     const captureDate = (event) => {
         setDate(event.target.value)
@@ -21,11 +22,15 @@ function AddContent() {
     }
 
 
+    useEffect(() => {
+        axios.get('http://localhost:4000/tasks')
+            .then(response => setTasks(response.data))
+            .catch(error => console.error('An Error occured when adding the task:', error));
+    }, []);
+
     const HandleSubmit = (event) => {
         event.preventDefault()
-        // const saveTasks = setTasks(task)
-        
-        const Lists = { date, time, task };
+        const Lists = { date, time, task, tasks };
         axios
             .post("http://localhost:4000/tasks", Lists)  //!           send a POST request to the server
             .then((response) => {                       //!           if the request is successful
