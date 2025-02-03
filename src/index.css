@@ -9,6 +9,7 @@
 .hello-text{
   font-size: 19px;
 }
+
 .nav-section{
   justify-items: center;
   top: 0;
@@ -16,6 +17,12 @@
   box-shadow: 0 0 15px  rgba(0,0,0,0.6);
   height: 70px;
   align-content: center;
+  margin-bottom: 20px;
+}
+
+.task-list{
+  width: 70%;
+  margin-left: 15%;
 }
 .links{
   display: flex;
@@ -24,17 +31,14 @@
   justify-items: center;
   font-size: 20px;
   font-weight: bold;
-  /* border-bottom: 3px solid rgb(0, 140, 255); */
 }
-
 .nav-link:hover{
-  text-shadow: 0 0 10px rgba(169, 36, 218, 0.6);
+  color: rgb(16, 39, 57);
 }
 
 .nav-link{
   margin:  0 35px;
   margin-bottom: 15px;
-
 }
 
 .form-field{
@@ -45,3 +49,98 @@
 .submit-btn{
   margin-left: 12.5%;
 }
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.task-container {
+  width: 80%;
+  margin-bottom: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.task-actions {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.view-task-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.task-content {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: bold;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.card-subtitle {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.card-text {
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.edit-btn, .mark-btn {
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  width: 150px;
+  height: 60px;
+  text-decoration: none;
+  text-align: center;
+  align-content: center;
+  margin-left: 30%;
+}
+
+.mark-btn {
+  background-color: #4CAF50;
+  color: #fff;
+  border: none;
+  width: 150px;
+  height: 60px;
+  margin-left: 40px;
+}
+
+.task-status {
+  background-color: #f7f7f7;
+  padding: 10px;
+  border-top: 1px solid #ddd;
+  text-align: center;
+}
+
+.text-success {
+  color: #2ecc71;
+}
+
+.text-danger {
+  color: #e74c3c;
+}
+

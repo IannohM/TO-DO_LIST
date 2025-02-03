@@ -1,24 +1,58 @@
 {
   "tasks": [
     {
-      "id": "6b06",
-      "date": "2025-01-31",
-      "time": "14:44",
-      "task": "cod",
-      "tasks": ""
+      "id": "cd1a",
+      "date": "2025-02-04",
+      "time": "06:30",
+      "task": "Wake up"
     },
     {
-      "id": "aabd",
-      "date": "2025-01-31",
-      "time": "14:44",
-      "task": "cod",
-      "tasks": ""
+      "id": "1242",
+      "date": "2025-02-04",
+      "time": "08:00",
+      "task": "Breakfast"
     },
     {
-      "id": "68cf",
-      "date": "2025-01-31",
-      "time": "14:54",
-      "task": "asdf"
+      "id": "3555",
+      "date": "2025-02-04",
+      "time": "11:00",
+      "task": "Classes"
+    },
+    {
+      "id": "1e6b",
+      "date": "2025-02-04",
+      "time": "13:00",
+      "task": "Lunch"
+    },
+    {
+      "id": "61fc",
+      "date": "2025-02-04",
+      "time": "14:00",
+      "task": "Bible Study"
+    },
+    {
+      "id": "c778",
+      "date": "2025-02-04",
+      "time": "14:30",
+      "task": "Javascript"
+    },
+    {
+      "id": "fcf8",
+      "date": "2025-02-04",
+      "time": "16:30",
+      "task": "Go home"
+    },
+    {
+      "id": "ce87",
+      "date": "2025-02-04",
+      "time": "19:45",
+      "task": "Javascript"
+    },
+    {
+      "id": "35e7",
+      "date": "2025-02-03",
+      "time": "19:01",
+      "task": "Cook"
     }
   ]
 }

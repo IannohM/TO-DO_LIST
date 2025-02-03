@@ -1,20 +1,20 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
 const FetchData = (url) => {
-    const [Lists , setLists] = useState(null);
+    const [data, setData] = useState(null);
 
     useEffect(() => {
         axios.get(url)
-            .then(response => {
-                setLists(response.Lists);
-
+            .then((response) => {
+                setData(response.data);
             })
-            .catch(error => {
+            .catch((error) => {
                 console.error(error);
             });
-    }, [url])
-    return { Lists };
-}
+    }, [url]);
+
+    return { data };
+};
 
 export default FetchData;
