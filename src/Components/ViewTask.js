@@ -1,36 +1,53 @@
 import { useParams } from "react-router-dom/cjs/react-router-dom";
 import FetchData from "./FetchData";
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 import axios from "axios";
+import { useEffect } from "react";
 
 const ViewTasks = () => {
-    const { id } = useParams()
-    const { List: tasks } = FetchData('http://localhost:4000/tasks/' + id);
+    const { id } = useParams();
+    const { data: tasks } = FetchData("http://localhost:4000/tasks/" + id);
     const history = useHistory();
+
+    useEffect(() => {
+        axios.get("http://localhost:4000/tasks/" + id)
+            .then((response) => {
+                console.log(response.data);
+            })
+            .catch((error) => {
+                console.error(error);
+            });
+    }, [id]);
 
     const handleDelete = (e) => {
         e.preventDefault();
 
-        axios.delete('http://localhost:4000/tasks/' + id)
-            .then(response => {
+        axios.delete("http://localhost:4000/tasks/" + id)
+            .then((response) => {
                 alert(`Task deleted successfully`);
-                history.push('/');
+                history.push("/");
             })
-    }
+            .catch((error) => {
+                console.error(error);
+            });
+    };
 
     return (
         <div>
             {tasks && (
-                <article>
-                    <h2>{tasks.date}</h2>
-                    <p>{tasks.time}</p>
-                    <p>{tasks.tasks}</p>
-                    <Button onClick={handleDelete} variant="danger">Delete</Button>
-                </article>
+                <Card className="task-box">
+                    <h2 className="date">Date: {tasks.date}</h2>
+                    <h2 className="task-time">Time: {tasks.time}</h2>
+                    <h3 className="task-body">Task: {tasks.task}</h3>
+
+                    <div className="d-flex">
+                        <Button onClick={handleDelete} variant="danger" className="d-block w-75">Delete</Button>
+                    </div>
+                </Card>
             )}
         </div>
     );
-}
+};
 
 export default ViewTasks;
